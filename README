@@ -1,3 +1,4 @@
+# Usage
 1. Jalankan dulu get_kode_provinsi.py untuk membentuk file kode_provinsi.csv
 2. Kemudian jalankan get_kode_pemda.py untuk membentuk file kode_pemda.csv
 3. Selanjutnya jalankan get_akun_tkdd.py untuk membentuk file akun-tkdd-{tahun}.csv
