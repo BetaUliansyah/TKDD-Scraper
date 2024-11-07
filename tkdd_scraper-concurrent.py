@@ -29,7 +29,7 @@ for i in akun_list:
 headers = ['tahun', 'kode_provinsi', 'kode_pemda'] + tkddvalues_list
 tkdd_df = pd.DataFrame(columns=headers) # Empty DataFrame, only headers
 
-# Define a function to fetch IDM for a given kode_desa
+# Define a function to fetch IDM for a given kode_pemda
 def fetch_tkdd(code):
     tahun = code[0:4]
     kode_provinsi = code[4:6]
@@ -39,7 +39,7 @@ def fetch_tkdd(code):
         r = s.get(url, verify=False)
         bsoup = BeautifulSoup(r.text, 'html.parser')
         
-        # Parse the response to get desa data
+        # Parse the response to get tkdd data
         data_dict = {'tahun': tahun, 'kode_provinsi' : kode_provinsi, 'kode_pemda' : kode_pemda}
         for i in akun_list:
             if i not in str(bsoup):
@@ -49,11 +49,11 @@ def fetch_tkdd(code):
             data_dict[i + ' (Realisasi)'] = tkddvalue.findNext('td').findNext('td').text.replace(' M','').replace('.','').replace(',','.')
         
         # Append data to DataFrame
-        data_desa = pd.DataFrame(data_dict)
-        return data_desa
+        data_tkdd = pd.DataFrame(data_dict)
+        return data_tkdd
     except Exception as e:
-        print(f"Failed to fetch data for kode_desa {kode_desa}: {e}")
-        return pd.DataFrame(columns=['kode_desa'])
+        print(f"Failed to fetch data for kode_pemda {kode_pemda}: {e}")
+        return pd.DataFrame(columns=['kode_pemda'])
 
 # Execute the requests concurrently with a max of 10 connections at a time
 with ThreadPoolExecutor(max_workers=10) as executor:
