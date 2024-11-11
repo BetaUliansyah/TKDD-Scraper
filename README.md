@@ -1,5 +1,5 @@
 # Info Terbaru
-Website DJPK akan otomatis berubah menjadi mode maintenance jika kita melakukan requests terlalu banyak dalam rentang waktu yang singkat. Solusinya, ambil data dari web Jaga.id yagn tidak membatasi requests. Selain itu, response sudah dalam bentuk json. Silakan gunakan [jaga-apbd-scraper](https://github.com/BetaUliansyah/jaga-apbd-scraper) atau jaga-tkdd-scraper (under develpoment).
+Website DJPK akan otomatis berubah menjadi mode maintenance jika kita melakukan requests terlalu banyak dalam rentang waktu yang singkat. Solusinya, ambil data dari web Jaga.id yagn tidak membatasi requests. Selain itu, response sudah dalam bentuk json. Silakan gunakan [jaga-apbd-scraper](https://github.com/BetaUliansyah/jaga-apbd-scraper) atau jaga-tkdd-scraper (under development).
 
 # Usage
 1. Jalankan dulu get_kode_provinsi.py untuk membentuk file kode_provinsi.csv
